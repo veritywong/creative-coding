@@ -38,6 +38,16 @@ const sketch = () => {
       context.rect(-w * 0.5, -h * 0.5, w, h);
       context.fill();
       context.restore();
+
+      context.save();
+      context.translate(cx, cy);
+      context.rotate(-angle);
+
+      context.beginPath();
+      // (x, y, radius, starting angle, ending angle)
+      context.arc(0, 0, radius, 0, slice);
+      context.stroke();
+      context.restore();
     }
   };
 };
